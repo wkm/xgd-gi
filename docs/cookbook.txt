@@ -1,0 +1,93 @@
+				The xGI Cookbook
+				 xGI Developers
+				 
+1) Introduction
+
+The xGI cookbook lists all of the "features" that we would like to add to xGI.
+Also listed are their respective requirments, a short summary of algorithms,
+a complete description of expected behavior and their associated difficulty
+and priority.
+
+Difficulties are shown by '%'s where '%' is straight-forward and '%%%%%' is
+impossibly complex. Priority is symbolized by '$'s where '$' is "no-time-soon"
+and '$$$$$' is next-release priority. The priorities do change but it is 
+unlikely that the difficulties will change.
+
+2) The Cookbook.
+
+I) 		PaintBox				%%		$$$$
+
+This is a widget. No requirments are needed.
+
+PaintBox is to draw a box between two points A and B with a specified color or
+pattern. Without a pattern the algorithm is straightforward, with a pattern
+one must do the following:
+
+	load corressponding pattern file
+	change pixels to appropriate colors (black to fg, white to bg)
+	load the above as texture of box.
+	
+The user specifies a foreground color (fg) and a background color (bg) the back
+ground color is the so-called "fill" while the foreground is the line arround
+the box.
+
+If either the foreground or background is (-1.0, -1.0, -1.0) then the
+corresponding *ground should not be drawn.
+
+The widget would be called as follows:
+	
+	xgiWidget = xgiCreateWidget_PaintBox(posx, posy, pattern, fg, bg);
+	
+Note, pattern is a XGI_PAINTBOX_PATTERN_* type name which specifies a file.
+The following should be supported:
+
+	 Name					| Sample (corny, I know)
+       -----------------------------------------|--------------
+	XGI_PAINTBOX_PATTERN_NOPATTERN ........	| no pattern
+	XGI_PAINTBOX_PATTERN_HATCH45 ..........	| ////////////
+	XGI_PAINTBOX_PATTERN_HATCH0 ...........	| ------------
+	XGI_PAINTBOX_PATTERN_HATCH90 .......... | ||||||||||||
+	XGI_PAINTBOX_PATTERN_HATCH-45 ......... | \\\\\\\\\\\\
+	XGI_PAINTBOX_PATTERN_CROSSHATCH .......	| XXXXXXXXXXXX
+	
+================================================================================
+II)		SimpleText				%		$$$$$
+
+This is a widget. No requirments. Note, it is imparitive this widget be done
+to the point that I will do it myself, :).
+
+SimpleText is a widget that draws a unformatted (no escape charecters, i.e '\n'
+type) string using a given font (nobody cares what, as long as it exists (see
+below)) and a given color.
+
+	The color is specified in the normal fashion (RGB).
+	
+	Should the font not exist, the string
+	
+	"ERROR [xgiWidgetSimpleText]: the font <font_name> does not exist
+			falling back on the standard font."
+			
+	will be printed to the console.
+	
+	Note: the standard font is "Schumacher, Clean, Normal"
+	and ships with xGI. If for some fucked up reason this font does
+	not exist then
+	
+	"ERROR [xgiWidgetSimpleText]: The standard font does not exist,
+			cannot print string."
+			
+	(no, the program will not quit.)
+	
+The standard fonts are:
+
+	XGI_SIMPLETEXT_FONT_CLEAN
+	XGI_SIMPLETEXT_FONT_FIXED
+	XGI_SIMPLETEXT_FONT_HELVETICA
+	
+However, any font may be used (if it is installed), the above are all
+strings. For example:
+
+XGI_SIMPLETEXT_FONT_CLEAN = "-schumacher-clean-medium-r-normal-*-*-120-*-*-c-*-iso646.1991-irv"
+
+================================================================================
+III)		Simple

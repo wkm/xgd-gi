@@ -1,0 +1,22 @@
+xGD-GI 0.0.1-04102004
+
+
+INSTALL: xGD-GI Release 0.0.1 April 10, 2004
+
+These are not auto generated instructions :)
+
+From this directory, execute the following commands:
+
+  cd libs
+  make libraries
+	cd ..
+  make test
+  ./xgi_test
+
+At this point you see a window with 4 colors and some text on the top.
+Hit ctrl+c in the console and then modify the file "tester.c" to your
+hearts content. I suggest you visit [ xgd-gi.sourceforge.net/tutorials.htm ]
+first but xGD-GI is simple enough that reading the test source should be
+plenty.
+
+Please report any bugs to xgi_leaddev@sourceforge.net .

@@ -1,0 +1,47 @@
+Release Notes for xGD-gi-0.0.1 released on April 8, 2004
+
+1) Introduction
+   This is the first release of the xGD Graphical Interfacer. Note that, for
+   all points and purposes, this is a technology preview.
+   
+   For a tutorial on xGD please see "~/dir/to/xgd-gi/libs/tutorial.html"
+  
+
+
+2) Core Additions/Modifications
+   The "core" of xGD-GI allows for creating an unlimited number of windows
+   and widgets. Windows can have specified positions and sizes however,
+   while they do get a title, they do not have any buttons (i.e. a close
+   window button does not exist). To terminate a program either hit C+c or
+   (if you use Enlightenment, like me) right click the title bar and click
+   either "close" or "annihilate".
+   
+   In addition, a widget can not be "clickable", that is, there is no
+   clicked callback. And it is not possible to change a widget's properties
+   (more from laziness than anything else).
+   
+   Also the "destroy" window function has not been implemented.
+
+
+
+3) Widget Additions/Modifications
+   Only the following two widgets are supported:
+   
+   Colorbox: widget that defines a box by a point at the upperleft of the
+   	box and a x and y size. The color is specified by either using one
+	of the default colors (white, black, grey, red, green, blue) or by
+	manual entry of three floats for red, green, and blue (ala glColor3f);
+	
+   Simpletext: widget that displays a unformatted string of charecters at a
+        given point on the screen. The color is the last on used (you can work
+	around this by using glColor3f(red_color, green_color, blue_color) to
+	specify a color before calling xgiMainLoop(). Also, the default color
+	(on my computer, but I think on all computers in general) is white.
+
+
+
+A) Appendix 1: Definitions
+
+  In this document the following words are to be interpreted as follows:
+  
+  unlimited - constrained only by system resources.
