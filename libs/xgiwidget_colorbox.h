@@ -5,7 +5,8 @@
 //
 #ifndef XGIWIDGET_COLORBOX_H
 #define XGIWIDGET_COLORBOX_H
-#include <GL/gl.h>
+
+#include <OpenGL/gl.h>
 
 #include "xgi_widget.h"
 

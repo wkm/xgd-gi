@@ -5,17 +5,17 @@
 #ifndef XGI_H
 #define XGI_H
 
-#include <GL/glut.h>
-#include <GL/gl.h>
-
+#include <GLUT/glut.h>
+#include <OpenGL/gl.h>
+#include <stdlib.h>
 
 #define XGI_DEPTH 			GLUT_DEPTH
 #define XGI_SINGLE			GLUT_SINGLE
-#define	XGI_RGBA				GLUT_RGBA
-#define XGI_NULL				0
+#define	XGI_RGBA			GLUT_RGBA
+#define XGI_NULL			0
 
-#define TRUE						't'
-#define FALSE						'f'
+#define TRUE				't'
+#define FALSE				'f'
 
 #include "xgi_widget.h"
 

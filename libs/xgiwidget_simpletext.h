@@ -11,7 +11,8 @@
 #ifndef XGIWIDGET_SIMPLETEXT_H
 #define XGIWIDGET_SIMPLETEXT_H
 
-#include <GL/glx.h>
+#include <OpenGL/glx.h>
+
 #include "xgi_widget.h"
 
 // alignment tags

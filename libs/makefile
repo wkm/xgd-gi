@@ -3,9 +3,9 @@
 #
 #
 
-compiler		= gcc -g
-cflags			= -I/usr/X11R6/include
-lflags			= -L/usr/include/ -lGL -lGLU -lglut -L/usr/X11R6/lib -lXaw -lXt -lXmu -lX11 -lm -lXi
+compiler		= gcc -g -Wall
+cflags		= 
+lflags		= -framework GLUT -framework OpenGL
 copyer			= cp -u
 libs				= .
 objects			= xgd.o xgi.o xgi_widget.o xgiwidget_colorbox.o xgiwidget_simpletext.o
@@ -27,5 +27,5 @@ xgiWidget: $(libs)/xgi_widget.h $(libs)/xgi_widget.c
 	$(compiler) $(cflags) $(libs)/xgi_widget.c -c 
 	
 clean:
-	rm *.o
+	rm -f *.o
 	
